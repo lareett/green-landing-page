@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+
+    /* Impede que as divs "filho" ultrapassem a div "pai"*/
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex; /*Faz com que cada item fique lado a lado*/
+    background-color: #201b2c;
+
+    width: 100vw;
+    height: 100vh;
+
+    justify-content: center; /*eixo X*/
+    align-items: center; /*eixo Y*/
+}
+
+.left{
+    display: flex;
+
+    width: 50vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    flex-direction: column;
+
+    /*border: 1px solid black;*/
+}
+
+.left > h1{
+    font-size: 2.5vw;
+    color: #77ffc0;
+    flex-wrap: wrap;
+
+    margin: 5px;
+    align-self: center;
+}
+
+.left-login-image{
+    width: 40vw;
+}
+
+.right{
+    display: flex;
+
+    width: 50vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    /*border: 1px solid black;*/
+}
+
+.card-login{
+    display: flex;
+    width: 60% /*60% da viewport, do tamanho da div em vw*/;
+    
+    background-color: #2f2841;
+    
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    padding: 30px 35px; /*eixo Y e eixo X, respectivamente*/
+
+    border-radius: 20px;
+
+    /*sombra para os lados. Sombra para cima ou baixo. Tamano do blur. Cor.*/
+    box-shadow: 0px 10px 20px #00000056;
+    
+    /*border: 1px solid black;*/
+}
+
+.card-login > h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: 10px 0;
+
+    /*border: 1px solid black;*/
+}
+
+.textfield > input {
+    width: 100%;
+    background-color: #514869;
+    
+    color: #f0ffffde;
+    font-size: 12pt;
+
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #00000056;
+
+    padding: 15px;
+
+    /* Retira caixa do input */
+    outline: none;
+
+
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.btn{
+    width: 100%;
+    padding: 16px 0;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+
+    outline: none;
+    text-transform: uppercase;
+
+    font-weight: 800;
+    letter-spacing: 2px; /* Espaçamento de letras*/
+
+    color: #2b134b;
+    background-color: #00ff88;
+
+    cursor: pointer; /* Cursor */
+
+    box-shadow: 0 10px 20px -12px #00ff8052;
+}
+
+@media only screen and (max-width:950px){
+
+    .card-login{
+        width: 85%;
+    }
+    }
+
+@media only screen and (max-width: 600px){
+    .main{
+        flex-direction: column;
+    }
+
+    .left > h1{
+        font-size: 4vw;
+    }
+
+    .left{
+        width: 100%;
+        height: auto; /* Não vai mais ocupar 100% da tela, será automático */
+
+        align-items: center;
+    }
+
+    .left-login-image{
+        width: 50vw;
+    }
+
+    .right{
+        width: 100%;
+        height: auto;
+    }
+
+
+}
